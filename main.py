@@ -67,7 +67,7 @@ if __name__ == "__main__":
         os.system('start powershell')
 
     if 'shutdown' in query : 
-        os.system('shutdown /s')
+        os.system('shutdown /s /t 1')
 
     if 'restart' in query : 
-        os.system('restart /r ')
+        os.system('shutdown /r /t 1')
