@@ -46,7 +46,7 @@ def command() :
         speak(query)
 
     except Exception as e : 
-        speak('Unexpected Error Occured while Recognizng... Try Again... ')
+        speak('Unexpected Error Occurred while Recognizing... Try Again... ')
 
 
 #! Main code 
