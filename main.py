@@ -37,6 +37,8 @@ def command() :
     with sr.Microphone() as source : 
         speak('Listening...')
         r.pause_threshold = 0.7
+        r.phrase_threshold = 0.5
+        r.non_speaking_duration = 0.4
         r.dynamic_energy_threshold = True
         audio = r.listen(source)
 
