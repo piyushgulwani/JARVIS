@@ -6,6 +6,7 @@ import time, os
 from datetime import datetime
 import speech_recognition as sr 
 
+
 #! Speaking with Preinting the text 
 def speak(text) :
     engine = pyttsx3.init('sapi5')
@@ -14,6 +15,7 @@ def speak(text) :
     engine.say(text)
     print(text)
     engine.runAndWait()
+
 
 #! Wisking According to time Using Time
 def wish() :
@@ -28,9 +30,9 @@ def wish() :
     else : 
         speak('Good Afternoon ')
 
+
 #! Voice Input Using SpeechRecognition 
 def command() : 
-
     r = sr.Recognizer()
     with sr.Microphone() as source : 
         speak('Listening...')
@@ -48,15 +50,15 @@ def command() :
     except Exception as e : 
         speak('Unexpected Error Occurred while Recognizing... Try Again... ')
 
+#! Speaks Current Day
 def current_day() :
-    day_dict = {1: 'Monday', 2: 'Tuesday',  
-                3: 'Wednesday', 4: 'Thursday',  
-                5: 'Friday', 6: 'Saturday', 
-                7: 'Sunday'} 
+    day_dict = {1: 'Monday', 2: 'Tuesday',  3: 'Wednesday', 4: 'Thursday',  
+                5: 'Friday', 6: 'Saturday', 7: 'Sunday'} 
     day = datetime.today().weekday() + 1
     if day in day_dict : 
         day = day_dict[day]
         speak(f"Today is {day}")
+
 
 #! Main code 
 if __name__ == "__main__":
