@@ -90,5 +90,9 @@ if __name__ == "__main__":
         elif 'the day' in query : 
             current_day()
 
+        elif 'shut up' or 'sleep' or 'quit' in query : 
+            speak('Sorry to interrupt Quitting Down ')
+            quit()
+
         else : 
             speak("Sorry I didn't understood")
