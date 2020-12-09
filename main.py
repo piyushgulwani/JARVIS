@@ -48,6 +48,15 @@ def command() :
     except Exception as e : 
         speak('Unexpected Error Occurred while Recognizing... Try Again... ')
 
+def current_day() :
+    day_dict = {1: 'Monday', 2: 'Tuesday',  
+                3: 'Wednesday', 4: 'Thursday',  
+                5: 'Friday', 6: 'Saturday', 
+                7: 'Sunday'} 
+    day = datetime.today().weekday() + 1
+    if day in day_dict : 
+        day = day_dict[day]
+        speak(f"Today is {day}")
 
 #! Main code 
 if __name__ == "__main__":
@@ -74,3 +83,6 @@ if __name__ == "__main__":
 
     if 'whats the time' in query : 
         speak(current_time) 
+    
+    if 'todays day' in query : 
+        current_day()
