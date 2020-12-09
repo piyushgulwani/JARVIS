@@ -44,11 +44,12 @@ def command() :
 
         speak('Hold On ...')
         query = r.recognize_google(audio, language='en-in')
-        print(f"Query :/t{query}")
-        speak(query)
+        print(f"Query :\t{query}")
 
     except Exception as e : 
         speak('Unexpected Error Occurred while Recognizing... Try Again... ')
+        
+    return query 
 
 #! Speaks Current Day
 def current_day() :
@@ -69,22 +70,25 @@ if __name__ == "__main__":
 
     wish()
 
-    query = command().lower()
+    while True :
+        query = command().lower()
+        if 'powershell'  in query : 
+            os.system('start powershell')
 
-    if 'powershell'  in query : 
-        os.system('start powershell')
+        elif 'command prompt' in query : 
+            os.system('start powershell')
 
-    if 'command prompt' in query : 
-        os.system('start powershell')
+        elif 'shutdown' in query : 
+            os.system('shutdown /s /t 1')
 
-    if 'shutdown' in query : 
-        os.system('shutdown /s /t 1')
+        elif 'restart' in query : 
+            os.system('shutdown /r /t 1')
 
-    if 'restart' in query : 
-        os.system('shutdown /r /t 1')
+        elif 'the time' in query : 
+            speak(current_time) 
+        
+        elif 'the day' in query : 
+            current_day()
 
-    if 'whats the time' in query : 
-        speak(current_time) 
-    
-    if 'todays day' in query : 
-        current_day()
+        else : 
+            speak("Sorry I didn't understood")
