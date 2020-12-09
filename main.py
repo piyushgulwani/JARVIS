@@ -71,3 +71,6 @@ if __name__ == "__main__":
 
     if 'restart' in query : 
         os.system('shutdown /r /t 1')
+
+    if 'whats the time' in query : 
+        speak(current_time) 
