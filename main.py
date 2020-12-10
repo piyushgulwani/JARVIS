@@ -1,6 +1,7 @@
 
 #! Main Modules 
 import pyttsx3 
+import shutil
 import wikipedia
 import time, os
 from datetime import datetime
@@ -63,12 +64,18 @@ def current_day() :
         speak(f"Today is {day}")
 
 
-#! Will Complete Soon
+#! This Function  will Run only Once 
 def your_name() :
-    if os.path.exists('name.txt') == True : 
-        pass 
+    if os.path.exists('name.txt') == False : 
+        with os.open('name.txt', 'w') as f :
+            speak('What Should I call You?')
+            name = command()
+            f.write(name)
+            speak(f'Your Good name is {name}. So I will call You {name}')
     else : 
-        pass
+        file = open('name.txt', 'r') 
+        name = file.readline() 
+        speak(f'Your Good name is {name}. So I will call You {name}') 
 
 #! Main code 
 if __name__ == "__main__":
@@ -100,7 +107,7 @@ if __name__ == "__main__":
             current_day()
 
         elif 'shut up' or 'sleep' or 'quit' in query : 
-            speak('Sorry to interrupt Quitting Down ')
+            speak('Sorry to interrupt Quitting')
             quit()
 
         else : 
