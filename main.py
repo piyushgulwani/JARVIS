@@ -63,6 +63,13 @@ def current_day() :
         speak(f"Today is {day}")
 
 
+#! Will Complete Soon
+def your_name() :
+    if os.path.exists('name.txt') == True : 
+        pass 
+    else : 
+        pass
+
 #! Main code 
 if __name__ == "__main__":
 
@@ -71,14 +78,14 @@ if __name__ == "__main__":
     current_time = (f"{hour}:{minute}")
 
     wish()
-
+    your_name()
     while True :
         query = command().lower()
         if 'powershell'  in query : 
             os.system('start powershell')
 
         elif 'command prompt' in query : 
-            os.system('start powershell')
+            os.system('start cmd')
 
         elif 'shutdown' in query : 
             os.system('shutdown /s /t 1')
