@@ -66,16 +66,18 @@ def current_day() :
 
 #! This Function  will Run only Once 
 def your_name() :
-    if os.path.exists('name.txt') == False : 
+    try :
+        with os.open('name.txt', 'r') as f :
+            name = f.readline()
+            speak(f'Your Good name is {name}. So I will call You {name}')
+
+    except FileNotFoundError :
         with os.open('name.txt', 'w') as f :
             speak('What Should I call You?')
             name = command()
             f.write(name)
             speak(f'Your Good name is {name}. So I will call You {name}')
-    else : 
-        file = open('name.txt', 'r') 
-        name = file.readline() 
-        speak(f'Your Good name is {name}. So I will call You {name}') 
+
 
 #! Main code 
 if __name__ == "__main__":
