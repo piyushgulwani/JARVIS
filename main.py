@@ -1,7 +1,7 @@
 
 #! Main Modules 
 import pyttsx3 
-import shutil
+import wolframalpha
 import wikipedia
 import time, os
 from datetime import datetime
