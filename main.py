@@ -119,5 +119,11 @@ if __name__ == "__main__":
             speak('Sorry to interrupt Sir ')
             quit()
 
+        elif 'wheather' in query : 
+            client = wolframalpha.Client(app_id= "Your API")
+            quest = client.query('wheather') 
+            quest = next(quest.results)
+            speak(quest)
+
         else : 
             speak("Sorry I didn't understood")
