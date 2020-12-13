@@ -18,7 +18,7 @@ def speak(text) :
     engine.runAndWait()
 
 
-#! Wisking According to time Using Time
+#! Wisking According to time Using Time Module
 def wish() :
     if current_time >= '18:00' and current_time <= '03:30' : 
         speak("Good Evening ")
@@ -32,7 +32,7 @@ def wish() :
         speak('Good Afternoon ')
 
 
-#! Voice Input Using SpeechRecognition 
+#! Voice Input Using SpeechRecognition Module
 def command() : 
     r = sr.Recognizer()
     with sr.Microphone() as source : 
@@ -44,17 +44,16 @@ def command() :
         audio = r.listen(source)
 
     try :
-
         speak('Hold On ...')
         query = r.recognize_google(audio, language='en-in')
         print(f"Query :\t{query}")
 
     except Exception as e : 
         speak('Unexpected Error Occurred while Recognizing... Try Again... ')
-        
+
     return query 
 
-#! Speaks Current Day
+#! Speaks Current Day using Datetime Module
 def current_day() :
     day_dict = {1: 'Monday', 2: 'Tuesday',  3: 'Wednesday', 4: 'Thursday',  
                 5: 'Friday', 6: 'Saturday', 7: 'Sunday'} 
