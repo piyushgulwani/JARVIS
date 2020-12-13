@@ -92,6 +92,14 @@ if __name__ == "__main__":
         if 'powershell'  in query : 
             os.system('start powershell')
 
+        elif 'wikipedia' in query : 
+            speak('Digging into Wikipedia')
+            statement = statement.replace('wikipedia', '')
+            result = wikipedia.summary(statement, sentences= 3)
+            result = result.split('.')
+            speak('Showing Results According to Wikipedia...')
+            speak(result)
+
         elif 'command prompt' in query : 
             os.system('start cmd')
 
