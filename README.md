@@ -5,9 +5,7 @@ More Functions will be Added Soon!|
 |--|
 
 - - -
-| Upcoming Function |
-|--|
-<br>
+### *Upcomming Functions*
 
 |Telling Whether |Playing Games |Intelligent Unit Converter|
 |--|--|--|
