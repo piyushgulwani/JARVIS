@@ -12,9 +12,8 @@ More Functions will be Added Soon!|
 - *File `test.py` is created for testing purpose to avoid errors in File `main.py` before testing new features*
 - - -
 ### Upcomming Functions
-
-|Telling Whether |Playing Games |Intelligent Unit Converter|
-|--|--|--|
+|Playing Games |Intelligent Unit Converter|
+|--|--|
 - - -
 ### *Function*
   - ### Temporary it holds Some of Basic Functions :-
