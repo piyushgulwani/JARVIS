@@ -5,7 +5,13 @@ More Functions will be Added Soon!|
 |--|
 
 - - -
-### *Upcomming Functions*
+### Description 
+
+- *Folder `__pycache__` and file `name.txt` will be created automatically as you will delete it*
+
+- *File `test.py` is created for testing purpose to avoid errors in File `main.py` before testing new features*
+- - -
+### Upcomming Functions
 
 |Telling Whether |Playing Games |Intelligent Unit Converter|
 |--|--|--|
@@ -17,4 +23,5 @@ More Functions will be Added Soon!|
      - ### Wishing / Greeting
      - ### Telling Time and Day 
      - ### Shutting and Restarting the System
-     - ### Wikipedia Searches 
+     - ### Wikipedia Searches
+     - ### Weather Telling 
