@@ -17,6 +17,9 @@ def speak(text) :
     print(text)
     engine.runAndWait()
 
+#! Client Query Solving by Wolframalpha
+def client_query(quest) : 
+    pass
 
 #! Wisking According to time Using Time Module
 def wish() :
