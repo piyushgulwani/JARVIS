@@ -19,7 +19,10 @@ def speak(text) :
 
 #! Client Query Solving by Wolframalpha
 def client_query(quest) : 
-    pass
+    client = wolframalpha.Client(app_id= "Your API")
+    result1 = client.query(quest) 
+    result1 = (next(quest.results).text)
+    speak(result1)
 
 #! Wisking According to time Using Time Module
 def wish() :
@@ -123,10 +126,7 @@ if __name__ == "__main__":
             quit()
 
         elif 'wheather' in query : 
-            client = wolframalpha.Client(app_id= "Your API")
-            quest = client.query('wheather') 
-            quest = (next(quest.results).text)
-            speak(quest)
+            client_query(query)
 
         else : 
             speak("Sorry I didn't understood")
