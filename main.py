@@ -125,7 +125,7 @@ if __name__ == "__main__":
         elif 'wheather' in query : 
             client = wolframalpha.Client(app_id= "Your API")
             quest = client.query('wheather') 
-            quest = next(quest.results)
+            quest = (next(quest.results).text)
             speak(quest)
 
         else : 
