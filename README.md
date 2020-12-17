@@ -10,6 +10,7 @@ More Functions will be Added Soon!|
 - *Folder `__pycache__` and file `name.txt` will be created automatically if you will delete it*
 
 - *File `test.py` is created for testing purpose to avoid errors in File `main.py` before adding new features*
+- *Run File `setup.py` to configure all the requirements*
 - - -
 ### Upcoming Functions
 |Playing Games |Intelligent Unit Converter|
