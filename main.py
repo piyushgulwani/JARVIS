@@ -82,7 +82,18 @@ def current_day() :
 
 #! This Function  will Run only Once 
 def your_name() :
-    pass
+    try :
+        with open('name.txt', 'r') as f : 
+            name = f.readline()
+            speak(f'Hello {name} Sir. ')
+
+    except Exception as E : 
+        with open('name.txt', 'w') as f : 
+            speak('Whats your name Sir ? ')
+            name = command()
+            name = f.write(name) 
+            speak(f'Hello {name} Sir.')
+
 
 #! Playing Games 
 def games() : 
