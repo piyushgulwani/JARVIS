@@ -26,7 +26,7 @@ More Functions will be Added Soon!|
      - ##### Wikipedia Searches
      - ##### Weather Telling 
 
-  - ### Functions Coming Soon
+  - #### Functions Coming Soon
     - ##### Edge Surfing Game 
     - ##### Dino Game 
     - ##### Flappy Bird Made by Me 
