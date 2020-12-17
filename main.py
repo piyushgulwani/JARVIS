@@ -3,6 +3,7 @@
 import pyttsx3 
 import wolframalpha
 import wikipedia
+import webbrowser
 import time, os, random
 from datetime import datetime
 import speech_recognition as sr 
@@ -94,6 +95,11 @@ def your_name() :
             speak(f'Your Good name is {name}. So I will call You {name}')
 
 
+def games() : 
+    speak('Which Game you wanna play? ')
+    option = command().lower()
+    if option == '' : 
+        pass
 #! Main code 
 if __name__ == "__main__":
 
