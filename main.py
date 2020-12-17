@@ -92,14 +92,13 @@ def your_name() :
             f.write(name)
             speak(f'Your Good name is {name}. So I will call You {name}')
 
-def currentTime() : 
-    hour = int(datetime.now().hour)
-    minute = int(datetime.now().minute)
-    current_time = (f"{hour}:{minute}")
-    speak(current_time)
 
 #! Main code 
 if __name__ == "__main__":
+
+    hour = int(datetime.now().hour)
+    minute = int(datetime.now().minute)
+    current_time = (f"{hour}:{minute}")
 
     wish()
     your_name()
