@@ -7,6 +7,15 @@ import time, os
 from datetime import datetime
 import speech_recognition as sr 
 
+def yourFunctions():
+    functions = """Opening Powershell or Command Prompt .
+    Wishing or Greeting .
+    Telling Time and Day .
+    Weather Forecast .
+    Wikipedia Searches .
+    Shutting or Restarting the System .
+    """
+    speak(functions)
 
 #! Speaking with Preinting the text 
 def speak(text) :
@@ -93,10 +102,14 @@ if __name__ == "__main__":
 
     wish()
     your_name()
+
     while True :
         query = command().lower()
         if 'powershell'  in query : 
             os.system('start powershell')
+
+        elif 'your functions' in query : 
+            yourFunctions()
 
         elif 'wikipedia' in query : 
             speak('Digging into Wikipedia')
