@@ -7,6 +7,7 @@ import time, os
 from datetime import datetime
 import speech_recognition as sr 
 
+#! Telling The Features
 def yourFunctions():
     speak('My Current Functions are ...')
     functions = """Opening Powershell or Command Prompt .
@@ -39,10 +40,8 @@ def wish() :
     if current_time >= '18:00' and current_time <= '03:30' : 
         speak("Good Evening ")
 
-
     elif current_time >= '03:30' and current_time <= '12:00' :
         speak('Good Morning ')
-
 
     else : 
         speak('Good Afternoon ')
@@ -93,13 +92,14 @@ def your_name() :
             f.write(name)
             speak(f'Your Good name is {name}. So I will call You {name}')
 
-
-#! Main code 
-if __name__ == "__main__":
-
+def currentTime() : 
     hour = int(datetime.now().hour)
     minute = int(datetime.now().minute)
     current_time = (f"{hour}:{minute}")
+    speak(current_time)
+
+#! Main code 
+if __name__ == "__main__":
 
     wish()
     your_name()
