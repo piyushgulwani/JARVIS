@@ -3,14 +3,15 @@
 import pyttsx3 
 import wolframalpha
 import wikipedia
-import time, os
+import time, os, random
 from datetime import datetime
 import speech_recognition as sr 
 
 #! Telling The Features
 def yourFunctions():
     speak('My Current Functions are ...')
-    functions = """Opening Powershell or Command Prompt .
+    functions = """
+    Opening Powershell or Command Prompt .
     Wishing or Greeting .
     Telling Time and Day .
     Weather Forecast .
