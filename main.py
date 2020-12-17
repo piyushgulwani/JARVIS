@@ -3,8 +3,8 @@
 import pyttsx3 
 import wolframalpha
 import wikipedia
-import webbrowser
-import time, os, random
+import webbrowser, os
+import time,random
 from datetime import datetime
 import speech_recognition as sr 
 
@@ -82,24 +82,19 @@ def current_day() :
 
 #! This Function  will Run only Once 
 def your_name() :
-    try :
-        with os.open('name.txt', 'r') as f :
-            name = f.readline()
-            speak(f'Your Good name is {name}. So I will call You {name}')
+    pass
 
-    except FileNotFoundError :
-        with os.open('name.txt', 'w') as f :
-            speak('What Should I call You?')
-            name = command()
-            f.write(name)
-            speak(f'Your Good name is {name}. So I will call You {name}')
-
-
+#! Playing Games 
 def games() : 
     speak('Which Game you wanna play? ')
     option = command().lower()
-    if option == '' : 
-        pass
+    if option == 'Dino' : 
+        webbrowser.open('https://dino-chrome.com')
+    
+    elif option == 'Surfer' : 
+        webbrowser.open('edge://surf/')
+
+
 #! Main code 
 if __name__ == "__main__":
 
@@ -140,6 +135,9 @@ if __name__ == "__main__":
         
         elif 'the day' in query : 
             current_day()
+
+        elif 'games' in query :
+            games()
 
         elif 'shut up' or 'sleep' or 'quit' in query : 
             speak('Sorry to interrupt Sir ')
