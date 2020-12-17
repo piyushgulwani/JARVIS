@@ -8,6 +8,7 @@ from datetime import datetime
 import speech_recognition as sr 
 
 def yourFunctions():
+    speak('My Current Functions are ...')
     functions = """Opening Powershell or Command Prompt .
     Wishing or Greeting .
     Telling Time and Day .
