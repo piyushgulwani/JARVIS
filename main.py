@@ -18,6 +18,7 @@ def yourFunctions():
     Weather Forecast .
     Wikipedia Searches .
     Shutting or Restarting the System .
+    Playing Chrome Dino Game and Edge Surfer
     """
     speak(functions)
 
@@ -47,7 +48,6 @@ def wish() :
 
     else : 
         speak('Good Afternoon ')
-
 
 #! Voice Input Using SpeechRecognition Module
 def command() : 
@@ -121,8 +121,14 @@ if __name__ == "__main__":
         if 'powershell'  in query : 
             os.system('start powershell')
 
+
         elif 'your functions' in query : 
             yourFunctions()
+
+
+        elif 'who made you' or 'who is your owner' in query : 
+            speak('My Creator is Piyush Gulwani')
+
 
         elif 'wikipedia' in query : 
             speak('Digging into Wikipedia')
@@ -132,35 +138,45 @@ if __name__ == "__main__":
             speak('Showing Results According to Wikipedia...')
             speak(result)
 
+
         elif 'command prompt' in query : 
             os.system('start cmd')
+
 
         elif 'shutdown' in query : 
             os.system('shutdown /s /t 1')
 
+
         elif 'restart' in query : 
             os.system('shutdown /r /t 1')
 
+
         elif 'the time' in query : 
             speak(current_time) 
-        
+
+
         elif 'the day' in query : 
             current_day()
 
+
         elif 'games' in query :
             games()
+
 
         elif 'shut up' or 'sleep' or 'quit' in query : 
             speak('Sorry to interrupt Sir ')
             quit()
 
+
         elif 'wheather' in query : 
             client_query(query)
+
 
         elif 'calculate' or 'calculator' in query : 
             speak('Please ask the calculation again ...')
             calculate = command()
             client_query(calculate)
+
 
         else : 
             speak("Sorry I didn't understood")
