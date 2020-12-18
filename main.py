@@ -157,5 +157,10 @@ if __name__ == "__main__":
         elif 'wheather' in query : 
             client_query(query)
 
+        elif 'calculate' or 'calculator' in query : 
+            speak('Please ask the calculation again ...')
+            calculate = command()
+            client_query(calculate)
+
         else : 
             speak("Sorry I didn't understood")
