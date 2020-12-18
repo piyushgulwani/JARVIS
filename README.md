@@ -27,9 +27,9 @@ More Functions will be Added Soon!|
      - ##### Weather Telling 
      - ##### Playing Chrome Dino 
      - ##### Playing Edge Surfer
+     - ##### Intelligent Speech Calculator
 
   - #### Functions Coming Soon
     - ##### Flappy Bird Made by Me 
     - ##### Snake Game Made by Me
     - ##### Unit  Conversion
-    - ##### Intelligent Speech Calculator
