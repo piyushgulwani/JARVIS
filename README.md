@@ -25,9 +25,9 @@ More Functions will be Added Soon!|
      - ##### Shutting and Restarting the System
      - ##### Wikipedia Searches
      - ##### Weather Telling 
+     - ##### Playing Chrome Dino 
+     - ##### Playing Edge Surfer
 
   - #### Functions Coming Soon
-    - ##### Edge Surfing Game 
-    - ##### Dino Game 
     - ##### Flappy Bird Made by Me 
     - ##### Snake Game Made by Me
