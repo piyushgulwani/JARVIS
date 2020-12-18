@@ -96,7 +96,7 @@ def your_name() :
 
 
 #! Playing Games 
-def games() : 
+def games() :   
     speak('Which Game you wanna play? ')
     option = command().lower()
     if option == 'Dino' : 
