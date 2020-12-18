@@ -19,6 +19,7 @@ def yourFunctions():
     Wikipedia Searches .
     Shutting or Restarting the System .
     Playing Chrome Dino Game and Edge Surfer
+    Intelligent Speech Calculator
     """
     speak(functions)
 
