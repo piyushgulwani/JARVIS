@@ -31,3 +31,5 @@ More Functions will be Added Soon!|
   - #### Functions Coming Soon
     - ##### Flappy Bird Made by Me 
     - ##### Snake Game Made by Me
+    - ##### Unit  Conversion
+    - ##### Intelligent Speech Calculator
