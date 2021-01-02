@@ -12,11 +12,9 @@ More Functions will be Added Soon!|
 - *File `test.py` is created for testing purpose to avoid errors in File `main.py` before adding new features*
 - *Run File `setup.py` to configure all the requirements*
 - - -
-### Upcoming Functions
-|Playing Games |Intelligent Unit Converter|
-|--|--|
-- - -
-### *Function*
+
+
+### *Functions*
   - #### Temporary it holds Some of Basic Functions 
      - ##### Open Powershell 
      - ##### Open Command Prompt 
@@ -28,6 +26,7 @@ More Functions will be Added Soon!|
      - ##### Playing Chrome Dino 
      - ##### Playing Edge Surfer
      - ##### Intelligent Speech Calculator
+     - ##### Intelligent Unit Converter
 
   - #### Functions Coming Soon
     - ##### Flappy Bird Made by Me 
