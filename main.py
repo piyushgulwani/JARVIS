@@ -34,7 +34,8 @@ def speak(text) :
 
 #! Client Query Solving by Wolframalpha
 def client_query(quest) : 
-    client = wolframalpha.Client(app_id= "Your API")
+    __api_key = '45EXYP-Q56VVHXWUE'
+    client = wolframalpha.Client(app_id= __api_key)
     result1 = client.query(quest) 
     result1 = (next(quest.results).text)
     speak(result1)
@@ -178,6 +179,10 @@ if __name__ == "__main__":
             calculate = command()
             client_query(calculate)
 
+        elif 'unit converter' in query : 
+            speak('Enabled Unit Converter. Speak quit to disable it or say the calculation')
+            conversion = command()
+            client_query(conversion)
 
         else : 
             speak("Sorry I didn't understood")
