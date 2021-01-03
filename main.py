@@ -133,7 +133,14 @@ if __name__ == "__main__":
 
         elif 'who made you' or 'who is your owner' in query : 
             speak('My Creator is Piyush Gulwani')
+            speak('Wanna Reach him')
+            opt0 = command()
 
+            if 'yes' in opt0 : 
+                webbrowser.open('https://www.instagram.com/____piiyush____/')
+
+            else : 
+                speak('Thanks')
 
         elif 'wikipedia' in query : 
             speak('Digging into Wikipedia')
