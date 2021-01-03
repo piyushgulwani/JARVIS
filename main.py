@@ -4,7 +4,7 @@ import pyttsx3
 import wolframalpha
 import wikipedia
 import webbrowser, os
-import time,random
+import time, random
 from datetime import datetime
 import speech_recognition as sr 
 
@@ -20,6 +20,7 @@ def yourFunctions():
     Shutting or Restarting the System .
     Playing Chrome Dino Game and Edge Surfer
     Intelligent Speech Calculator
+    Intelligent Speech Unit Converter
     """
     speak(functions)
 
@@ -115,6 +116,8 @@ if __name__ == "__main__":
     minute = int(datetime.now().minute)
     current_time = (f"{hour}:{minute}")
 
+#! Other Functions
+    greets = ('Hi', 'Hello')
     wish()
     your_name()
 
@@ -183,6 +186,9 @@ if __name__ == "__main__":
             speak('Enabled Unit Converter. Speak quit to disable it or say the calculation')
             conversion = command()
             client_query(conversion)
+
+        elif greets in query : 
+            speak('Hello, What Can I Do for you ?')
 
         else : 
             speak("Sorry I didn't understood")
