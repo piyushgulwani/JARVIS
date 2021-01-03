@@ -27,6 +27,7 @@ More Functions will be Added Soon!|
      - ##### Playing Edge Surfer
      - ##### Intelligent Speech Calculator
      - ##### Intelligent Unit Converter
+     - ##### Way To Reach Me
 
   - #### Functions Coming Soon
     - ##### Flappy Bird Made by Me 
