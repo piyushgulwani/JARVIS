@@ -28,8 +28,3 @@ More Functions will be Added Soon!|
      - ##### Intelligent Speech Calculator
      - ##### Intelligent Unit Converter
      - ##### Way To Reach Me
-
-  - #### Functions Coming Soon
-    - ##### Flappy Bird Made by Me 
-    - ##### Snake Game Made by Me
-    - ##### Unit  Conversion
