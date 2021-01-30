@@ -35,7 +35,7 @@ def speak(text) :
 
 #! Client Query Solving by Wolframalpha
 def client_query(quest) : 
-    __api_key = '45EXYP-Q56VVHXWUE'
+    __api_key = ''
     client = wolframalpha.Client(app_id= __api_key)
     result1 = client.query(quest) 
     result1 = (next(quest.results).text)
