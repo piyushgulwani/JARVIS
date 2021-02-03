@@ -8,6 +8,8 @@ import time, random
 from datetime import datetime
 import speech_recognition as sr 
 from PIL import ImageGrab
+import pytesseract, cv2
+import numpy as np
 
 #! Telling The Features
 def yourFunctions():
@@ -69,8 +71,7 @@ def wish() :
 #! Voice Input Using SpeechRecognition Module
 def command() : 
     """
-    The function takes the user voice input and returns as a string which is later stored in a container or variable named 
-    [query]
+    The function takes the user voice input and returns as a string which is later stored in a container or variable named query .
     """
     r = sr.Recognizer()
     with sr.Microphone() as source : 
@@ -139,6 +140,20 @@ def games() :
     elif option == 'Surfer' : 
         webbrowser.open('edge://surf/')
 
+def imageToText() : 
+    """
+    This Function will capture your current screen in real time and detect words. 
+    The detected words will later be spoken by the speak function .
+    """
+    try : 
+        while True: 
+            capture = ImageGrab.grab()
+            tesseract = pytesseract.image_to_string(cv2.cvtColor(np.array(capture), cv2.COLOR_BGR2GRAY), lang='eng')
+            speak(tesseract)
+            break
+
+    except pytesseract.TesseractNotFoundError : 
+        pass
 
 #! Main code 
 if __name__ == "__main__":
@@ -148,7 +163,6 @@ if __name__ == "__main__":
     current_time = (f"{hour}:{minute}")
 
 #! Other Functions
-    greets = ('Hi', 'Hello')
     wish()
     your_name()
 
