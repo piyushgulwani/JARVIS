@@ -239,8 +239,5 @@ if __name__ == "__main__":
             conversion = command()
             client_query(conversion)
 
-        elif greets in query : 
-            speak('Hello, What Can I Do for you ?')
-
         else : 
             speak("Sorry I didn't understood")
