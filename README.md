@@ -27,4 +27,5 @@ More Functions will be Added Soon!|
      - ##### Playing Edge Surfer
      - ##### Intelligent Speech Calculator
      - ##### Intelligent Unit Converter
+     - ##### Image to Text
      - ##### Way To Reach Me
