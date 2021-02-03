@@ -7,9 +7,15 @@ import webbrowser, os
 import time, random
 from datetime import datetime
 import speech_recognition as sr 
+from PIL import ImageGrab
 
 #! Telling The Features
 def yourFunctions():
+
+    """
+    This function speaks the features of the whole program . 
+    """
+
     speak('My Current Functions are ...')
     functions = """
     Opening Powershell or Command Prompt .
@@ -26,6 +32,10 @@ def yourFunctions():
 
 #! Speaking with Preinting the text 
 def speak(text) :
+
+    """
+    The function initializes the audio engine. The arguments should be passed in the string (str) format.
+    """
     engine = pyttsx3.init('sapi5')
     engine.setProperty('rate', -0.2)
     engine.setProperty('volume', 0.5)
@@ -43,6 +53,10 @@ def client_query(quest) :
 
 #! Wisking According to time Using Time Module
 def wish() :
+
+    """
+    As its name tells you it greets the user according to the time. 
+    """
     if current_time >= '18:00' and current_time <= '03:30' : 
         speak("Good Evening ")
 
@@ -54,6 +68,10 @@ def wish() :
 
 #! Voice Input Using SpeechRecognition Module
 def command() : 
+    """
+    The function takes the user voice input and returns as a string which is later stored in a container or variable named 
+    [query]
+    """
     r = sr.Recognizer()
     with sr.Microphone() as source : 
         speak('Listening...')
@@ -71,10 +89,14 @@ def command() :
     except Exception as e : 
         speak('Unexpected Error Occurred while Recognizing... Try Again... ')
 
-    return query 
+    return query
 
 #! Speaks Current Day using Datetime Module
 def current_day() :
+    """
+    Tells about the current day using the datetime module. 
+    Converts the index of the day into the word format
+    """
     day_dict = {1: 'Monday', 2: 'Tuesday',  3: 'Wednesday', 4: 'Thursday',  
                 5: 'Friday', 6: 'Saturday', 7: 'Sunday'} 
     day = datetime.today().weekday() + 1
@@ -85,6 +107,12 @@ def current_day() :
 
 #! This Function  will Run only Once 
 def your_name() :
+    """
+    As its necessary to know your name to your assistant so it grabs your name and stores in the file 
+    named name.txt. 
+    If the file is deleted or you have changed the  file name the function will create the file again.
+    """
+
     try :
         with open('name.txt', 'r') as f : 
             name = f.readline()
@@ -100,6 +128,9 @@ def your_name() :
 
 #! Playing Games 
 def games() :   
+    """
+    Play the browser games. Enjoy :)
+    """
     speak('Which Game you wanna play? ')
     option = command().lower()
     if option == 'Dino' : 
