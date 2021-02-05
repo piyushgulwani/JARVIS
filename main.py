@@ -235,9 +235,20 @@ if __name__ == "__main__":
             client_query(calculate)
 
         elif 'unit converter' in query : 
-            speak('Enabled Unit Converter. Speak quit to disable it or say the calculation')
-            conversion = command()
-            client_query(conversion)
+            speak('Enableing Unit Converter. Speak quit to disable it or say the calculation')
+            conversion = command().lower()
+            if 'quit' or 'exit' in conversion :
+                speak('Quiting the function !!')
+                quit()
+            
+            else : 
+                speak('Enabled Unit Conversion')
+                speak('What are the conversions ?')
+                conversion = command().lower()
+                client_query(conversion)
 
+        elif 'read this for me' in query : 
+            speak('Reading the page for you !')
+            imageToText()
         else : 
             speak("Sorry I didn't understood")
