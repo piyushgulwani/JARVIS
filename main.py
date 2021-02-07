@@ -161,94 +161,103 @@ if __name__ == "__main__":
     minute = int(datetime.now().minute)
     current_time = (f"{hour}:{minute}")
 
-
+    
     wish()
     your_name()
 
-    while True :
-        query = command().lower()
-        if 'powershell'  in query : 
-            os.system('start powershell')
+    try:
 
 
-        elif 'your functions' in query : 
-            yourFunctions()
+        while True :
 
 
-        elif 'who made you' or 'who is your owner' in query : 
-            speak('My Creator is Piyush Gulwani')
-            speak('Wanna Reach him')
-            opt0 = command()
-
-            if 'yes' in opt0 : 
-                webbrowser.open('https://www.instagram.com/____piiyush____/')
-
-            else : 
-                speak('Thanks')
-
-        elif 'wikipedia' in query : 
-            speak('Digging into Wikipedia')
-            statement = statement.replace('wikipedia', '')
-            result = wikipedia.summary(statement, sentences= 3)
-            result = result.split('.')
-            speak('Showing Results According to Wikipedia...')
-            speak(result)
+            query = command().lower()
+            if 'powershell'  in query : 
+                os.system('start powershell')
 
 
-        elif 'command prompt' in query : 
-            os.system('start cmd')
+            elif 'your functions' in query : 
+                yourFunctions()
 
 
-        elif 'shutdown' in query : 
-            os.system('shutdown /s /t 1')
+            elif 'who made you' or 'who is your owner' in query : 
+                speak('My Creator is Piyush Gulwani')
+                speak('Wanna Reach him')
+                opt0 = command()
+
+                if 'yes' in opt0 : 
+                    webbrowser.open('https://www.instagram.com/____piiyush____/')
+
+                else : 
+                    speak('Thanks')
+
+            elif 'wikipedia' in query : 
+                speak('Digging into Wikipedia')
+                statement = statement.replace('wikipedia', '')
+                result = wikipedia.summary(statement, sentences= 3)
+                result = result.split('.')
+                speak('Showing Results According to Wikipedia...')
+                speak(result)
 
 
-        elif 'restart' in query : 
-            os.system('shutdown /r /t 1')
+            elif 'command prompt' in query : 
+                os.system('start cmd')
 
 
-        elif 'the time' in query : 
-            speak(current_time) 
+            elif 'shutdown' in query : 
+                os.system('shutdown /s /t 1')
 
 
-        elif 'the day' in query : 
-            current_day()
+            elif 'restart' in query : 
+                os.system('shutdown /r /t 1')
 
 
-        elif 'games' in query :
-            games()
+            elif 'the time' in query : 
+                speak(current_time) 
 
 
-        elif 'shut up' or 'sleep' or 'quit' in query : 
-            speak('Sorry to interrupt Sir ')
-            quit()
+            elif 'the day' in query : 
+                current_day()
 
 
-        elif 'wheather' in query : 
-            client_query(query)
+            elif 'games' in query :
+                games()
 
 
-        elif 'calculate' or 'calculator' in query : 
-            speak('Please ask the calculation again ...')
-            calculate = command()
-            client_query(calculate)
-
-        elif 'unit converter' in query : 
-            speak('Enableing Unit Converter. Speak quit to disable it or say the calculation')
-            conversion = command().lower()
-            if 'quit' or 'exit' in conversion :
-                speak('Quiting the function !!')
+            elif 'shut up' or 'sleep' or 'quit' in query : 
+                speak('Sorry to interrupt Sir ')
                 quit()
 
-            else : 
-                speak('Enabled Unit Conversion')
-                speak('What are the conversions ?')
+
+            elif 'wheather' in query : 
+                client_query(query)
+
+
+            elif 'calculate' or 'calculator' in query : 
+                speak('Please ask the calculation again ...')
+                calculate = command()
+                client_query(calculate)
+
+            elif 'unit converter' in query : 
+                speak('Enableing Unit Converter. Speak quit to disable it or say the calculation')
                 conversion = command().lower()
-                client_query(conversion)
+                if 'quit' or 'exit' in conversion :
+                    speak('Quiting the function !!')
+                    quit()
 
-        elif 'read this for me' in query : 
-            speak('Reading the page for you !')
-            imageToText()
+                else : 
+                    speak('Enabled Unit Conversion')
+                    speak('What are the conversions ?')
+                    conversion = command().lower()
+                    client_query(conversion)
 
-        else : 
-            speak("Sorry I didn't understood")
+            elif 'read this for me' in query : 
+                speak('Reading the page for you !')
+                imageToText()
+
+            else : 
+                speak("Sorry I didn't understood")
+
+    except KeyboardInterrupt as exception0 :
+        speak('User cancelled the request. Quitting')
+        quit()
