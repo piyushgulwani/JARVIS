@@ -11,7 +11,7 @@ from PIL import ImageGrab
 import pytesseract, cv2
 import numpy as np
 
-#! Telling The Features
+
 def yourFunctions():
 
     """
@@ -32,7 +32,7 @@ def yourFunctions():
     """
     speak(functions)
 
-#! Speaking with Preinting the text 
+
 def speak(text) :
 
     """
@@ -45,7 +45,7 @@ def speak(text) :
     print(text)
     engine.runAndWait()
 
-#! Client Query Solving by Wolframalpha
+
 def client_query(quest) : 
     __api_key = ''
     client = wolframalpha.Client(app_id= __api_key)
@@ -53,7 +53,7 @@ def client_query(quest) :
     result1 = (next(quest.results).text)
     speak(result1)
 
-#! Wisking According to time Using Time Module
+
 def wish() :
 
     """
@@ -68,7 +68,7 @@ def wish() :
     else : 
         speak('Good Afternoon ')
 
-#! Voice Input Using SpeechRecognition Module
+
 def command() : 
     """
     The function takes the user voice input and returns as a string which is later stored in a container or variable named query .
@@ -92,7 +92,7 @@ def command() :
 
     return query
 
-#! Speaks Current Day using Datetime Module
+
 def current_day() :
     """
     Tells about the current day using the datetime module. 
@@ -106,7 +106,6 @@ def current_day() :
         speak(f"Today is {day}")
 
 
-#! This Function  will Run only Once 
 def your_name() :
     """
     As its necessary to know your name to your assistant so it grabs your name and stores in the file 
@@ -127,7 +126,6 @@ def your_name() :
             speak(f'Hello {name} Sir.')
 
 
-#! Playing Games 
 def games() :   
     """
     Play the browser games. Enjoy :)
@@ -139,6 +137,7 @@ def games() :
     
     elif option == 'Surfer' : 
         webbrowser.open('edge://surf/')
+
 
 def imageToText() : 
     """
@@ -153,16 +152,16 @@ def imageToText() :
             break
 
     except pytesseract.TesseractNotFoundError : 
-        pass
+        speak('Please setup your python tesseract  !!')
 
-#! Main code 
+
 if __name__ == "__main__":
 
     hour = int(datetime.now().hour)
     minute = int(datetime.now().minute)
     current_time = (f"{hour}:{minute}")
 
-#! Other Functions
+
     wish()
     your_name()
 
@@ -240,7 +239,7 @@ if __name__ == "__main__":
             if 'quit' or 'exit' in conversion :
                 speak('Quiting the function !!')
                 quit()
-            
+
             else : 
                 speak('Enabled Unit Conversion')
                 speak('What are the conversions ?')
@@ -250,5 +249,6 @@ if __name__ == "__main__":
         elif 'read this for me' in query : 
             speak('Reading the page for you !')
             imageToText()
+
         else : 
             speak("Sorry I didn't understood")
