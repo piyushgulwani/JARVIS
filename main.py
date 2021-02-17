@@ -259,5 +259,9 @@ if __name__ == "__main__":
                 speak("Sorry I didn't understood")
 
     except KeyboardInterrupt as exception0 :
-        speak('User cancelled the request. Quitting')
+        speak('User cancelled the request. Quitting !!')
+        quit()
+
+    except (ConnectionError or ConnectionAbortedError ) as exception1 :
+        speak('You aren\'t connected. Quitting !!')
         quit()
