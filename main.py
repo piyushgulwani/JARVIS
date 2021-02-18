@@ -130,14 +130,8 @@ def games() :
     """
     Play the browser games. Enjoy :)
     """
-    speak('Which Game you wanna play? ')
-    option = command().lower()
-    if option == 'Dino' : 
-        webbrowser.open('https://dino-chrome.com')
-    
-    elif option == 'Surfer' : 
-        webbrowser.open('edge://surf/')
-
+    speak('Enjoy the game !!')
+    webbrowser.open('https://dino-chrome.com/')
 
 def imageToText() : 
     """
