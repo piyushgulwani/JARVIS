@@ -256,6 +256,6 @@ if __name__ == "__main__":
         speak('User cancelled the request. Quitting !!')
         quit()
 
-    except (ConnectionError or ConnectionAbortedError ) as exception1 :
+    except (ConnectionError or ConnectionAbortedError) as exception1 :
         speak('You aren\'t connected. Quitting !!')
         quit()
