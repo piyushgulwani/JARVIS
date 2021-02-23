@@ -10,6 +10,7 @@ import speech_recognition as sr
 from PIL import ImageGrab
 import pytesseract, cv2
 import numpy as np
+import json, requests
 
 
 def yourFunctions():
@@ -148,6 +149,21 @@ def imageToText() :
     except pytesseract.TesseractNotFoundError : 
         speak('Please setup your python tesseract  !!')
 
+def todaysNews() : 
+    """
+
+    """
+    try :
+        url = 'https://newsapi.org/v2/top-headlines?country=in&apiKey='
+        news = requests.get(url).text
+        news = json.loads(news)
+        news = news['articles']
+        for i in news : 
+            speak(i['title'])
+            time.sleep(1)
+    
+    except Exception as exception2 : 
+        speak('Exception Occurred !!')
 
 if __name__ == "__main__":
 
