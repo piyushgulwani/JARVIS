@@ -265,6 +265,9 @@ if __name__ == "__main__":
                 speak('Reading the page for you !')
                 imageToText()
 
+            elif 'todays news' or 'news' in query : 
+                todaysNews()
+
             else : 
                 speak("Sorry I didn't understood")
 
