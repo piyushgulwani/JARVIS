@@ -279,9 +279,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt as exception0 :
         speak('User cancelled the request. Quitting !!')
         exit()
-    # except (ConnectionError or ConnectionAbortedError) as exception1 :
-    #     speak('You aren\'t connected. Quitting !!')
-    #     quit()
 
     except NameError as exception3 : 
         speak('Variable Issue Occurred. Quitting !!')
