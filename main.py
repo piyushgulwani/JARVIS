@@ -119,12 +119,16 @@ def your_name() :
             name = f.readline()
             speak(f'Hello {name} Sir. ')
 
-    except Exception as E : 
+    except Exception as exception4 : 
         with open('name.txt', 'w') as f : 
             speak('Whats your name Sir ? ')
             name = command()
-            name = f.write(name) 
-            speak(f'Hello {name} Sir.')
+            if len(name) > 7 : 
+                speak('Name cannot exceed beyond 7')
+
+            else  : 
+                name = f.write(name) 
+                speak(f'Hello {name} Sir.')
 
 
 def games() :   
@@ -235,9 +239,9 @@ if __name__ == "__main__":
                 games()
 
 
-            # if 'shut up' or 'sleep' or 'quit' in query : 
-            #     speak('Sorry to interrupt Sir ')
-            #     quit()
+            if 'shut up' or 'sleep' or 'quit' in query : 
+                speak('Sorry to interrupt Sir ')
+                quit()
 
 
             if 'wheather' in query : 
