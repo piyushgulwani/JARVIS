@@ -190,95 +190,95 @@ if __name__ == "__main__":
                 os.system('start powershell')
 
 
-            if 'your functions' in query : 
-                yourFunctions()
+                if 'your functions' in query : 
+                    yourFunctions()
 
 
-            if 'who made you' in query : 
-                speak('My Creator is Piyush G')
-                speak('Wanna Reach him')
-                opt0 = command()
+                    if 'who made you' in query : 
+                        speak('My Creator is Piyush G')
+                        speak('Wanna Reach him')
+                        opt0 = command()
 
-                if 'yes' in opt0 : 
-                    webbrowser.open('https://www.instagram.com/____piiyush____/')
-                    break
+                        if 'yes' in opt0 : 
+                            webbrowser.open('https://www.instagram.com/____piiyush____/')
+                            break
 
-                else :
-                    speak('Thanks')
-                    break
-
-            if 'wikipedia' in query : 
-                speak('Digging into Wikipedia')
-                statement = query.replace('wikipedia', '')
-                result = wikipedia.summary(statement, sentences= 3)
-                speak('Showing Results According to Wikipedia...')
-                speak(result)
+                        else :
+                            speak('Thanks')
 
 
-            if 'command prompt' in query : 
-                os.system('start cmd')
+                        if 'wikipedia' in query : 
+                            speak('Digging into Wikipedia')
+                            statement = query.replace('wikipedia', '')
+                            result = wikipedia.summary(statement, sentences= 3)
+                            speak('Showing Results According to Wikipedia...')
+                            speak(result)
 
 
-            if 'shutdown' in query : 
-                os.system('shutdown /s /t 1')
+                            if 'command prompt' in query : 
+                                os.system('start cmd')
 
 
-            if 'restart' in query : 
-                os.system('shutdown /r /t 1')
+                                if 'shutdown' in query : 
+                                    os.system('shutdown /s /t 1')
 
 
-            if 'the time' in query : 
-                speak(current_time) 
+                                    if 'restart' in query : 
+                                        os.system('shutdown /r /t 1')
 
 
-            if 'the day' in query : 
-                current_day()
+                                        if 'the time' in query : 
+                                            speak(current_time) 
 
 
-            if 'games' in query :
-                games()
+                                            if 'the day' in query : 
+                                                current_day()
 
 
-            if 'shut up' or 'sleep' or 'quit' in query : 
-                speak('Sorry to interrupt Sir ')
-                quit()
+                                                if 'games' in query :
+                                                    games()
 
 
-            if 'wheather' in query : 
-                client_query(query)
+                                                    if 'shut up' or 'sleep' or 'quit' in query : 
+                                                        speak('Sorry to interrupt Sir ')
+                                                        quit()
 
 
-            if 'calculate' or 'calculator' in query : 
-                speak('Please ask the calculation again ...')
-                calculate = command()
-                client_query(calculate)
+                                                        if 'wheather' in query : 
+                                                            client_query(query)
 
-            if 'unit converter' in query : 
-                speak('Enableing Unit Converter. Speak quit to disable it or say the calculation')
-                conversion = command().lower()
-                if 'quit' or 'exit' in conversion :
-                    speak('Quiting the function !!')
-                    quit()
 
-                else : 
-                    speak('Enabled Unit Conversion')
-                    speak('What are the conversions ?')
-                    conversion = command().lower()
-                    client_query(conversion)
+                                                            if 'calculate' or 'calculator' in query : 
+                                                                speak('Please ask the calculation again ...')
+                                                                calculate = command()
+                                                                client_query(calculate)
 
-            if 'read this for me' in query : 
-                speak('Reading the page for you !')
-                imageToText()
+                                                                if 'unit converter' in query : 
+                                                                    speak('Enableing Unit Converter. Speak quit to disable it or say the calculation')
+                                                                    conversion = command().lower()
+                                                                    if 'quit' or 'exit' in conversion :
+                                                                        speak('Quiting the function !!')
+                                                                        quit()
 
-            if 'todays news' or 'news' in query : 
-                todaysNews()
+                                                                    else : 
+                                                                        speak('Enabled Unit Conversion')
+                                                                        speak('What are the conversions ?')
+                                                                        conversion = command().lower()
+                                                                        client_query(conversion)
 
-            else : 
-                speak("Sorry I didn't understood")
+                                                                    if 'read this for me' in query : 
+                                                                        speak('Reading the page for you !')
+                                                                        imageToText()
+
+                                                                    if 'todays news' or 'news' in query : 
+                                                                        todaysNews()
+
+                                                                    else : 
+                                                                        speak("Sorry I didn't understood")
 
     except KeyboardInterrupt as exception0 :
         speak('User cancelled the request. Quitting !!')
-        exit()
+        quit()
 
     except NameError as exception3 : 
         speak('Variable Issue Occurred. Quitting !!')
