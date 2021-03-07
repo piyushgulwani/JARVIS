@@ -99,11 +99,9 @@ def current_day() :
     Tells about the current day using the datetime module. 
     Converts the index of the day into the word format
     """
-
     day_dict = {1: 'Monday', 2: 'Tuesday',  3: 'Wednesday', 4: 'Thursday',  
                 5: 'Friday', 6: 'Saturday', 7: 'Sunday'} 
     day = datetime.today().weekday() + 1
-
     if day in day_dict : 
         day = day_dict[day]
         speak(f"Today is {day}")
@@ -137,7 +135,6 @@ def games() :
     """
     Play the browser games. Enjoy :)
     """
-
     speak('Enjoy the game !!')
     webbrowser.open('https://dino-chrome.com/')
 
@@ -146,7 +143,6 @@ def imageToText() :
     This Function will capture your current screen in real time and detect words. 
     The detected words will later be spoken by the speak function .
     """
-
     try : 
         while True: 
             capture = ImageGrab.grab()
@@ -158,7 +154,9 @@ def imageToText() :
         speak('Please setup your python tesseract  !!')
 
 def todaysNews() : 
+    """
 
+    """
     try :
         url = 'https://newsapi.org/v2/top-headlines?country=in&apiKey='
         news = requests.get(url).text
@@ -183,98 +181,100 @@ if __name__ == "__main__":
 
     try:
 
+
         while True :
+
 
             query = command().lower()
             if 'powershell'  in query : 
                 os.system('start powershell')
 
 
-                if 'your functions' in query : 
-                    yourFunctions()
+            if 'your functions' in query : 
+                yourFunctions()
 
 
-                    if 'who made you' in query : 
-                        speak('My Creator is Piyush G')
-                        speak('Wanna Reach him')
-                        opt0 = command()
+            if 'who made you' in query : 
+                speak('My Creator is Piyush G')
+                speak('Wanna Reach him')
+                opt0 = command()
 
-                        if 'yes' in opt0 : 
-                            webbrowser.open('https://www.instagram.com/____piiyush____/')
-                            break
+                if 'yes' in opt0 : 
+                    webbrowser.open('https://www.instagram.com/____piiyush____/')
+                    break
 
-                        else :
-                            speak('Thanks')
+                else :
+                    speak('Thanks')
+                    break
 
-
-                        if 'wikipedia' in query : 
-                            speak('Digging into Wikipedia')
-                            statement = query.replace('wikipedia', '')
-                            result = wikipedia.summary(statement, sentences= 3)
-                            speak('Showing Results According to Wikipedia...')
-                            speak(result)
-
-
-                            if 'command prompt' in query : 
-                                os.system('start cmd')
+            if 'wikipedia' in query : 
+                speak('Digging into Wikipedia')
+                statement = query.replace('wikipedia', '')
+                result = wikipedia.summary(statement, sentences= 3)
+                speak('Showing Results According to Wikipedia...')
+                speak(result)
 
 
-                                if 'shutdown' in query : 
-                                    os.system('shutdown /s /t 1')
+            if 'command prompt' in query : 
+                os.system('start cmd')
 
 
-                                    if 'restart' in query : 
-                                        os.system('shutdown /r /t 1')
+            if 'shutdown' in query : 
+                os.system('shutdown /s /t 1')
 
 
-                                        if 'the time' in query : 
-                                            speak(current_time) 
+            if 'restart' in query : 
+                os.system('shutdown /r /t 1')
 
 
-                                            if 'the day' in query : 
-                                                current_day()
+            if 'the time' in query : 
+                speak(current_time) 
 
 
-                                                if 'games' in query :
-                                                    games()
+            if 'the day' in query : 
+                current_day()
 
 
-                                                    if 'shut up' or 'sleep' or 'quit' in query : 
-                                                        speak('Sorry to interrupt Sir ')
-                                                        quit()
+            if 'games' in query :
+                games()
 
 
-                                                        if 'wheather' in query : 
-                                                            client_query(query)
+            if 'shut up' or 'sleep' or 'quit' in query : 
+                speak('Sorry to interrupt Sir ')
+                quit()
 
 
-                                                            if 'calculate' or 'calculator' in query : 
-                                                                speak('Please ask the calculation again ...')
-                                                                calculate = command()
-                                                                client_query(calculate)
+            if 'wheather' in query : 
+                client_query(query)
 
-                                                                if 'unit converter' in query : 
-                                                                    speak('Enableing Unit Converter. Speak quit to disable it or say the calculation')
-                                                                    conversion = command().lower()
-                                                                    if 'quit' or 'exit' in conversion :
-                                                                        speak('Quiting the function !!')
-                                                                        quit()
 
-                                                                    else : 
-                                                                        speak('Enabled Unit Conversion')
-                                                                        speak('What are the conversions ?')
-                                                                        conversion = command().lower()
-                                                                        client_query(conversion)
+            if 'calculate' or 'calculator' in query : 
+                speak('Please ask the calculation again ...')
+                calculate = command()
+                client_query(calculate)
 
-                                                                    if 'read this for me' in query : 
-                                                                        speak('Reading the page for you !')
-                                                                        imageToText()
+            if 'unit converter' in query : 
+                speak('Enableing Unit Converter. Speak quit to disable it or say the calculation')
+                conversion = command().lower()
+                if 'quit' or 'exit' in conversion :
+                    speak('Quiting the function !!')
+                    quit()
 
-                                                                    if 'todays news' or 'news' in query : 
-                                                                        todaysNews()
+                else : 
+                    speak('Enabled Unit Conversion')
+                    speak('What are the conversions ?')
+                    conversion = command().lower()
+                    client_query(conversion)
 
-                                                                    else : 
-                                                                        speak("Sorry I didn't understood")
+            if 'read this for me' in query : 
+                speak('Reading the page for you !')
+                imageToText()
+
+            if 'todays news' or 'news' in query : 
+                todaysNews()
+
+            else : 
+                speak("Sorry I didn't understood")
 
     except KeyboardInterrupt as exception0 :
         speak('User cancelled the request. Quitting !!')
