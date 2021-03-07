@@ -99,9 +99,11 @@ def current_day() :
     Tells about the current day using the datetime module. 
     Converts the index of the day into the word format
     """
+
     day_dict = {1: 'Monday', 2: 'Tuesday',  3: 'Wednesday', 4: 'Thursday',  
                 5: 'Friday', 6: 'Saturday', 7: 'Sunday'} 
     day = datetime.today().weekday() + 1
+
     if day in day_dict : 
         day = day_dict[day]
         speak(f"Today is {day}")
@@ -135,6 +137,7 @@ def games() :
     """
     Play the browser games. Enjoy :)
     """
+
     speak('Enjoy the game !!')
     webbrowser.open('https://dino-chrome.com/')
 
@@ -143,6 +146,7 @@ def imageToText() :
     This Function will capture your current screen in real time and detect words. 
     The detected words will later be spoken by the speak function .
     """
+
     try : 
         while True: 
             capture = ImageGrab.grab()
@@ -154,9 +158,7 @@ def imageToText() :
         speak('Please setup your python tesseract  !!')
 
 def todaysNews() : 
-    """
 
-    """
     try :
         url = 'https://newsapi.org/v2/top-headlines?country=in&apiKey='
         news = requests.get(url).text
@@ -181,9 +183,7 @@ if __name__ == "__main__":
 
     try:
 
-
         while True :
-
 
             query = command().lower()
             if 'powershell'  in query : 
