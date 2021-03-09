@@ -51,7 +51,7 @@ def client_query(quest) :
     __api_key = '45EXYP-Q56VVHXWUE'
     client = wolframalpha.Client(app_id= __api_key)
     result1 = client.query(quest) 
-    answers = next(quest.results).text
+    answers = next(quest.Results).text
     speak(answers)
 
 
@@ -203,11 +203,11 @@ if __name__ == "__main__":
                 os.system('start powershell')
 
 
-            if 'your functions' in query : 
+            elif 'your functions' in query : 
                 yourFunctions()
 
 
-            if 'who made you' in query : 
+            elif 'who made you' in query : 
                 speak('My Creator is Piyush G')
                 speak('Wanna Reach him')
                 opt0 = command()
@@ -220,7 +220,7 @@ if __name__ == "__main__":
                     speak('Thanks')
                     break
 
-            if 'wikipedia' in query : 
+            elif 'wikipedia' in query : 
                 speak('Digging into Wikipedia')
                 statement = query.replace('wikipedia', '')
                 result = wikipedia.summary(statement, sentences= 3)
@@ -228,51 +228,50 @@ if __name__ == "__main__":
                 speak(result)
 
 
-            if 'command prompt' in query : 
+            elif 'command prompt' in query : 
                 os.system('start cmd')
 
 
-            if 'shutdown' in query : 
+            elif 'shutdown' in query : 
                 os.system('shutdown /s /t 1')
 
 
-            if 'restart' in query : 
+            elif 'restart' in query : 
                 os.system('shutdown /r /t 1')
 
 
-            if 'the time' in query : 
+            elif 'the time' in query : 
                 speak(current_time) 
 
 
-            if 'the day' in query : 
+            elif 'the day' in query : 
                 current_day()
 
 
-            if 'games' in query :
+            elif 'games' in query :
                 games()
 
 
-            if 'shut up' or 'sleep' or 'quit' in query : 
-                speak('Sorry to interrupt Sir ')
+            elif 'shut up' or 'sleep' or 'quit' in query : 
+                speak('Quitting !! Sorry. ')
                 quit()
 
 
-            if 'wheather' in query : 
+            elif 'wheather' in query : 
                 client_query(query)
 
 
-            if 'calculate' or 'calculator' in query : 
+            elif 'calculate' or 'calculator' in query : 
                 speak('Please ask the calculation again ...')
                 calculate = command()
                 client_query(calculate)
 
 
-            if 'unit converter' in query : 
+            elif 'unit converter' in query : 
                 speak('Enableing Unit Converter. Speak quit to disable it or say the calculation')
                 conversion = command().lower()
                 if 'quit' or 'exit' in conversion :
                     speak('Quiting the function !!')
-                    quit()
 
 
                 else : 
@@ -282,24 +281,19 @@ if __name__ == "__main__":
                     client_query(conversion)
 
 
-            if 'read this for me' in query : 
+            elif 'read this for me' in query : 
                 speak('Reading the page for you !')
                 imageToText()
 
 
-            if 'todays news' or 'news' in query : 
+            elif 'todays news' or 'news' in query : 
                 todaysNews()
 
 
-        else : 
-            speak("Sorry I didn't understood")
+            else : 
+                speak("Sorry I didn't understood")
 
 
     except KeyboardInterrupt as exception0 :
         speak('User cancelled the request. Quitting !!')
-        quit()
-
-
-    except NameError as exception3 : 
-        speak('Variable Issue Occurred. Quitting !!')
         quit()
