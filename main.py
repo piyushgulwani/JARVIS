@@ -19,7 +19,7 @@ def yourFunctions():
     This function speaks the features of the whole program . 
     """
 
-    speak('My Current Functions are ...')
+    speak('My Current Functions are ...')  
     functions = """
     Opening Powershell or Command Prompt .
     Wishing or Greeting .
@@ -60,17 +60,21 @@ def wish() :
     """
     As its name tells you it greets the user according to the time. 
     """
-    if current_time >= '18:00' and current_time <= '03:30' : 
-        speak("Good Evening ")
+    try :
+        if current_time >= '18:00' and current_time <= '03:30' : 
+            speak("Good Evening ")
 
-    if current_time >= '03:30' and current_time <= '12:00' :
-        speak('Good Morning ')
+        if current_time >= '03:30' and current_time <= '12:00' :
+            speak('Good Morning ')
 
-    else : 
-        speak('Good Afternoon ')
-
+        else : 
+            speak('Good Afternoon ')
+            
+    except Exception as exception5 :
+        speak('Quitting !! Thanks')
 
 def command() : 
+
     """
     The function takes the user voice input and returns as a string which is later stored in a container or variable named query .
     """
@@ -95,10 +99,12 @@ def command() :
 
 
 def current_day() :
+
     """
     Tells about the current day using the datetime module. 
     Converts the index of the day into the word format
     """
+
     day_dict = {1: 'Monday', 2: 'Tuesday',  3: 'Wednesday', 4: 'Thursday',  
                 5: 'Friday', 6: 'Saturday', 7: 'Sunday'} 
     day = datetime.today().weekday() + 1
@@ -108,6 +114,7 @@ def current_day() :
 
 
 def your_name() :
+
     """
     As its necessary to know your name to your assistant so it grabs your name and stores in the file 
     named name.txt. 
@@ -132,13 +139,17 @@ def your_name() :
 
 
 def games() :   
+
     """
     Play the browser games. Enjoy :)
     """
     speak('Enjoy the game !!')
     webbrowser.open('https://dino-chrome.com/')
 
+
+
 def imageToText() : 
+
     """
     This Function will capture your current screen in real time and detect words. 
     The detected words will later be spoken by the speak function .
@@ -152,6 +163,7 @@ def imageToText() :
 
     except pytesseract.TesseractNotFoundError : 
         speak('Please setup your python tesseract  !!')
+
 
 def todaysNews() : 
     """
@@ -169,17 +181,18 @@ def todaysNews() :
     except Exception as exception2 : 
         speak('Exception Occurred !!')
 
+
 if __name__ == "__main__":
 
     hour = int(datetime.now().hour)
     minute = int(datetime.now().minute)
     current_time = (f"{hour}:{minute}")
 
-    
-    wish()
-    your_name()
 
     try:
+
+        wish()
+        your_name()
 
 
         while True :
@@ -253,6 +266,7 @@ if __name__ == "__main__":
                 calculate = command()
                 client_query(calculate)
 
+
             if 'unit converter' in query : 
                 speak('Enableing Unit Converter. Speak quit to disable it or say the calculation')
                 conversion = command().lower()
@@ -260,25 +274,31 @@ if __name__ == "__main__":
                     speak('Quiting the function !!')
                     quit()
 
+
                 else : 
                     speak('Enabled Unit Conversion')
                     speak('What are the conversions ?')
                     conversion = command().lower()
                     client_query(conversion)
 
+
             if 'read this for me' in query : 
                 speak('Reading the page for you !')
                 imageToText()
 
+
             if 'todays news' or 'news' in query : 
                 todaysNews()
 
-            else : 
-                speak("Sorry I didn't understood")
+
+        else : 
+            speak("Sorry I didn't understood")
+
 
     except KeyboardInterrupt as exception0 :
         speak('User cancelled the request. Quitting !!')
         quit()
+
 
     except NameError as exception3 : 
         speak('Variable Issue Occurred. Quitting !!')
