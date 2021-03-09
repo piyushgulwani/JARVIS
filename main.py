@@ -232,6 +232,9 @@ if __name__ == "__main__":
                 os.system('start cmd')
 
 
+            elif 'who is' in query or 'what is' in query : 
+                client_query(query)
+
             elif 'shutdown' in query : 
                 os.system('shutdown /s /t 1')
 
@@ -289,6 +292,13 @@ if __name__ == "__main__":
             elif 'todays news' or 'news' in query : 
                 todaysNews()
 
+
+            elif 'i love you' in query : 
+                speak('Its hard to understand')
+
+
+            elif 'your age' in query : 
+                speak('Program doesn\'t have age :(')
 
             else : 
                 speak("Sorry I didn't understood")
