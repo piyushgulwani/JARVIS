@@ -231,6 +231,7 @@ if __name__ == "__main__":
 
                 for i in pyjokes.get_jokes() : 
                     if i <= 10 : 
+                        speak(i)
                         continue
                     else : 
                         break
