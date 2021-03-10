@@ -187,7 +187,7 @@ if __name__ == "__main__":
     hour = int(datetime.now().hour)
     minute = int(datetime.now().minute)
     current_time = (f"{hour}:{minute}")
-
+    clear = lambda: os.system('cls')
 
     try:
 
@@ -205,6 +205,21 @@ if __name__ == "__main__":
 
             elif 'your functions' in query : 
                 yourFunctions()
+
+
+            elif  'open youtube' in query : 
+                webbrowser.open('www.youtube.com')
+
+
+            elif 'open google' in query : 
+                webbrowser.open('www.google.com')
+
+
+            elif  'open stack overflow' in query : 
+                webbrowser.open('www.stackoverflow.com')
+
+            elif 'open github' in  query : 
+                webbrowser.open('www.github.com')
 
 
             elif 'who made you' in query : 
