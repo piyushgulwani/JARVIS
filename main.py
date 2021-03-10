@@ -10,6 +10,7 @@ import speech_recognition as sr
 from PIL import ImageGrab
 import pytesseract, cv2
 import numpy as np
+import pyjokes
 import json, requests
 
 
@@ -208,18 +209,31 @@ if __name__ == "__main__":
 
 
             elif  'open youtube' in query : 
+                speak('Surfing  to  Youtube !!')
                 webbrowser.open('www.youtube.com')
 
 
             elif 'open google' in query : 
+                speak('Surfing  to  Google !!')
                 webbrowser.open('www.google.com')
 
 
             elif  'open stack overflow' in query : 
+                speak('Surfing  to  Stack Overflow  !!')
                 webbrowser.open('www.stackoverflow.com')
 
             elif 'open github' in  query : 
+                speak('Surfing  to  Github !!')
                 webbrowser.open('www.github.com')
+
+
+            elif 'jokes' in query : 
+
+                for i in pyjokes.get_jokes : 
+                    if i <= 10 : 
+                        continue
+                    else : 
+                        break
 
 
             elif 'who made you' in query : 
