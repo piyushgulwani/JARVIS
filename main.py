@@ -229,7 +229,7 @@ if __name__ == "__main__":
 
             elif 'jokes' in query : 
 
-                for i in pyjokes.get_jokes : 
+                for i in pyjokes.get_jokes() : 
                     if i <= 10 : 
                         continue
                     else : 
