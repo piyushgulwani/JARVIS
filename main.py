@@ -4,6 +4,7 @@ import pyttsx3
 import wolframalpha
 import wikipedia
 import webbrowser, os
+import winshell
 import time, random
 from datetime import datetime
 import speech_recognition as sr 
@@ -280,6 +281,9 @@ if __name__ == "__main__":
             elif 'the day' in query : 
                 current_day()
 
+            elif 'your work' in query :
+                speak('My work is to automate small tasks')
+
 
             elif 'games' in query :
                 games()
@@ -327,8 +331,14 @@ if __name__ == "__main__":
                 speak('Its hard to understand')
 
 
+            elif 'empty recycle bin' in query : 
+                winshell.recycle_bin.empty(confirm = False, show_progress = True, sound = True)
+                speak('Successfully emptied the bin !!')
+
+
             elif 'your age' in query : 
                 speak('Program doesn\'t have age :(')
+
 
             else : 
                 speak("Sorry I didn't understood")
