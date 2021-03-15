@@ -186,9 +186,6 @@ def todaysNews() :
 
 if __name__ == "__main__":
 
-    hour = int(datetime.now().hour)
-    minute = int(datetime.now().minute)
-    current_time = (f"{hour}:{minute}")
     clear = lambda: os.system('cls')
 
     try:
@@ -275,8 +272,8 @@ if __name__ == "__main__":
 
 
             elif 'the time' in query : 
-                speak(current_time) 
-
+                currentTime = datetime.strftime('#H : #M')
+                speak(f'Current time is {currentTime}')
 
             elif 'the day' in query : 
                 current_day()
