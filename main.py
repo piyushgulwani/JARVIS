@@ -63,10 +63,10 @@ def wish() :
     As its name tells you it greets the user according to the time. 
     """
     try :
-        if current_time >= '18:00' and current_time <= '03:30' : 
+        if currentTime >= '18:00' and currentTime <= '03:30' : 
             speak("Good Evening ")
 
-        if current_time >= '03:30' and current_time <= '12:00' :
+        if currentTime >= '03:30' and currentTime <= '12:00' :
             speak('Good Morning ')
 
         else : 
